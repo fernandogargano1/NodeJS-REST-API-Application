@@ -327,3 +327,21 @@
 {"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-09T14:12:34.375Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-09T14:12:37.662Z"}
 {"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-09T14:12:38.849Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T13:58:30.007Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T13:58:31.235Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T13:58:38.755Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T13:58:39.792Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T13:58:42.037Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T13:58:43.257Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:02:41.925Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:02:42.965Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:02:45.580Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:02:46.636Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:02:49.488Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:02:50.809Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:03:35.572Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:03:36.758Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:03:39.099Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:03:40.172Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-08-14T14:03:43.279Z"}
+{"level":"info","message":"Connected to mongodb://localhost/vidly_test...","timestamp":"2018-08-14T14:03:44.315Z"}
