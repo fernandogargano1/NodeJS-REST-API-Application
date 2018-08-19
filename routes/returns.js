@@ -1,10 +1,12 @@
+const moment = require('moment');
 const express = require('express');
 const router = express.Router();
 const { Rental } = require('../models/rental');
+const { Movie } = require('../models/movie');
 
 const auth = require('../middleware/auth');
 
-router.post('/', async (req, res) => {    
+router.post('/', auth, async (req, res) => {    
 
     if (!req.body.customerId) return res.status(400).send('customerId not provided');
 
@@ -13,15 +15,22 @@ router.post('/', async (req, res) => {
     const rental =  await Rental.findOne({
         'customer._id': req.body.customerId, 
         'movie._id': req.body.movieId 
-    });
-
-    console.log('rental: ', rental);
-
+    });     
+    
     if (!rental) return res.status(404).send('Rental not found');
 
-    if (rental.dateReturned) res.status(400).send('Returned already processed'); 
+    if (rental.dateReturned) return res.status(400).send('Returned already processed'); 
 
-    return res.status(401).send('Unauthorized'); 
+    rental.dateReturned = new Date();       
+    const rentalDays =  moment().diff(rental.dateOut, 'days');
+    
+    rental.rentalFee = rentalDays * rental.movie.dailyRentalRate;    
+
+    await rental.save();
+
+    return res.status(200).send();
+
+    // return res.status(401).send('Unauthorized'); 
    
 });
 

@@ -1,8 +1,10 @@
+const moment = require('moment');
 const request = require('supertest');
 const mongoose = require('mongoose');
 
 const { Rental } = require('../../models/rental');
 const { User } = require('../../models/user');
+const { Movie} = require('../../models/movie');
 
 describe('/api/returns', () => {
     let server;
@@ -98,5 +100,42 @@ describe('/api/returns', () => {
         const res = await exec();
 
         expect(res.status).toBe(400);
-    })
+    });
+
+    it('should return 200 if we have valid request', async  () => {        
+
+        const res = await exec();        
+
+        expect(res.status).toBe(200);
+
+    });
+
+    it('should set the return date if input is valid', async  () => {        
+
+        const res = await exec();    
+        
+        const rentalInDb =  await Rental.findById(rental._id);   
+        
+        // We get the difference in miliseconds
+        const diff = new Date() - rentalInDb.dateReturned;
+
+        // expect(rentalInDb.dateReturned).toBeDefined();
+        expect(diff).toBeLessThan(10 * 1000);
+
+    });
+
+    it('should calculate the rental fee if input is valid', async  () => {           
+        
+        rental.dateOut = moment().add(-7, 'days').toDate();
+
+        await rental.save();        
+
+        const res = await exec();    
+        
+        const rentalInDb =  await Rental.findById(rental._id);
+
+        expect(rentalInDb.rentalFee).toBe(14);
+        // expect(true).toBe(true);
+
+    });
 });
